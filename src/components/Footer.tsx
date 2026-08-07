@@ -1,4 +1,4 @@
-import { navLinks, contact, poweredBy, sponsors2026 } from "../data/content";
+import { navLinks, contact, poweredBy, sponsors2026, pastHackathons } from "../data/content";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-ink py-14 text-white/70">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <p className="font-display text-lg font-semibold text-white">CTP Hacks 2026</p>
             <p className="mt-2 text-sm">
@@ -26,6 +26,21 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
+
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+              Past Hackathons
+            </p>
+            <ul className="mt-4 space-y-2">
+              {pastHackathons.map((item) => (
+                <li key={item.year}>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white">
+                    CTP Hacks {item.year}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Contact</p>

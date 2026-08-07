@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import { navLinks } from "../data/content";
+import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { navLinks, pastHackathons } from "../data/content";
+import PastHackathonsDropdown from "./PastHackathonsDropdown";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [pastOpenMobile, setPastOpenMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -48,6 +50,9 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          <li>
+            <PastHackathonsDropdown />
+          </li>
         </ul>
 
         <a
@@ -84,6 +89,41 @@ export default function Nav() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-2 border-t border-white/10 pt-2">
+            <button
+              type="button"
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5 hover:text-white"
+              aria-expanded={pastOpenMobile}
+              aria-controls="mobile-past-hackathons"
+              onClick={() => setPastOpenMobile((v) => !v)}
+            >
+              Past Hackathons
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${pastOpenMobile ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
+            {pastOpenMobile && (
+              <ul id="mobile-past-hackathons" className="flex flex-col gap-1 pb-1 pl-3">
+                {pastHackathons.map((item) => (
+                  <li key={item.year}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                      className="flex items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-white"
+                    >
+                      CTP Hacks {item.year}
+                      <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/40" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
           <a
             href="#get-involved"
             onClick={() => setOpen(false)}
