@@ -13,6 +13,18 @@ export const navLinks = [
   { label: "Questions", href: "#questions" },
 ];
 
+/**
+ * Links to previous years' hackathon sites, shown as a "Past Hackathons"
+ * dropdown in the nav and listed in the footer. Add/remove years here —
+ * nothing else needs to change.
+ */
+export const pastHackathons = [
+  // { year: "2022", href: "http://localhost:3000/students/hackathons/2022/" },
+  { year: "2023", href: "https://cunytechprep.github.io/hackathon-2023/" },
+  { year: "2024", href: "https://cunytechprep.github.io/hackathon-2024/" },
+  { year: "2025", href: "https://zfadeout.github.io/CTPHacks2025Site/" },
+];
+
 export const eventDays = [
   {
     id: "level-up-day",
