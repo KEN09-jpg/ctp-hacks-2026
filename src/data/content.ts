@@ -4,6 +4,15 @@
  * the rest of the site reads from these structures.
  */
 
+import asanaLogo from "../../Logos/asana.png";
+import diversityLogo from "../../Logos/diversity logo.png";
+import googleCloudLogo from "../../Logos/Google Cloud.png";
+import ieeeLogo from "../../Logos/ieee-logo.png";
+import linkedinLogo from "../../Logos/linkedin.png";
+import lyftLogo from "../../Logos/lyft.png";
+import mlhLogo from "../../Logos/mlh-logo-color.png";
+import nuarchLogo from "../../Logos/nuarch.png";
+
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "What to Expect", href: "#what-to-expect" },
@@ -121,10 +130,7 @@ export const getInvolvedCta = {
 };
 
 /**
- * Logo wall groupings. `logoSrc` is left empty until real brand assets are
- * supplied — the LogoWall component renders a labeled placeholder tile in
- * that case so no logo is invented. Add new entries here; layout adapts
- * automatically.
+ * Logo wall groupings. Add new entries here; layout adapts automatically.
  */
 export interface SponsorLogo {
   name: string;
@@ -133,13 +139,22 @@ export interface SponsorLogo {
 }
 
 export const poweredBy: SponsorLogo[] = [
-  { name: "Major League Hacking (MLH)" },
   { name: "Google Gemini" },
 ];
 
-export const sponsors2026: SponsorLogo[] = [{ name: "IEEE" }];
+export const sponsors2026: SponsorLogo[] = [
+  { name: "Google Cloud", logoSrc: googleCloudLogo },
+  { name: "Major League Hacking (MLH)", logoSrc: mlhLogo },
+  { name: "IEEE", logoSrc: ieeeLogo },
+];
 
-export const pastSponsors: SponsorLogo[] = [];
+export const pastSponsors: SponsorLogo[] = [
+  { name: "Diversity", logoSrc: diversityLogo },
+  { name: "Lyft", logoSrc: lyftLogo },
+  { name: "LinkedIn", logoSrc: linkedinLogo },
+  { name: "Nuarch", logoSrc: nuarchLogo },
+  { name: "Asana", logoSrc: asanaLogo },
+];
 
 export const contact = {
   email: "hackathon@cunytechprep.org",

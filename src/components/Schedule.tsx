@@ -17,7 +17,7 @@ export default function Schedule() {
             Hack Day, stop by stop.
           </h2>
           <p className="mt-3 max-w-xl text-sm text-white/60">
-            Thursday, August 27 · CUNY @ Amazon, NYC
+            Thursday, August 27 · NYC
           </p>
         </Reveal>
 

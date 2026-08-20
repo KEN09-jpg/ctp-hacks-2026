@@ -38,23 +38,6 @@ function LogoGroup({ title, logos, size = "md" }: { title: string; logos: Sponso
         {logos.map((logo) => (
           <LogoTile key={logo.name} logo={logo} size={size} />
         ))}
-        {/* Reserved placeholder tiles so new logos can be dropped in without a redesign */}
-        {title === "2026 Sponsors" && (
-          <>
-            <div
-              className="flex h-20 w-40 items-center justify-center rounded-2xl border-2 border-dashed border-mist-dark text-xs text-ink-soft/40 sm:h-24 sm:w-52"
-              aria-hidden="true"
-            >
-              Sponsor logo
-            </div>
-            <div
-              className="flex h-20 w-40 items-center justify-center rounded-2xl border-2 border-dashed border-mist-dark text-xs text-ink-soft/40 sm:h-24 sm:w-52"
-              aria-hidden="true"
-            >
-              Sponsor logo
-            </div>
-          </>
-        )}
       </div>
     </div>
   );
@@ -65,10 +48,7 @@ export default function Sponsors() {
     <section id="sponsors" className="bg-canvas-dim py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
-          <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-line-violet">
-            Powered &amp; Supported By
-          </span>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Who makes CTP Hacks possible.
           </h2>
         </Reveal>
@@ -82,7 +62,7 @@ export default function Sponsors() {
           </Reveal>
           {pastSponsors.length > 0 && (
             <Reveal delay={240}>
-              <LogoGroup title="Past Sponsors" logos={pastSponsors} size="sm" />
+              <LogoGroup title="Previous Sponsors" logos={pastSponsors} size="sm" />
             </Reveal>
           )}
         </div>
